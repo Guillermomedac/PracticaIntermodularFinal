@@ -17,6 +17,7 @@ public class Satelites extends javax.swing.JFrame {
 
     /**
      * Creates new form Satelites
+     * precargamos otra vez los datos
      */
     public Satelites() {
         initComponents();
@@ -229,11 +230,9 @@ public class Satelites extends javax.swing.JFrame {
         
 // Borra todos los elementos existentes en el comboBox
         jComboBox1.removeAllItems();
-
-// Crear una instancia de la clase Planeta
         Planetas idplaneta = new Planetas();
 
-// Obtener el nombre del planeta seleccionado desde la instancia de Planeta
+// Obtener el nombre del planeta seleccionado desde Planeta
         String[] arrPlanetas = {"Mercurio", "Venus", "Tierra", "Marte", "Júpiter", "Saturno", "Urano", "Neptuno"};
         String nombrePlaneta = arrPlanetas[idplaneta.nplaneta - 1];
         System.out.println(idplaneta.nplaneta);
@@ -251,7 +250,7 @@ public class Satelites extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed // cargamos los datos de la base al programa 
         String nsatelite = (String) jComboBox1.getSelectedItem();
         String imagePath = "";
         String planetasatelite = "";

@@ -31,7 +31,7 @@ public class Conectorbd {
 
         return nombre;
     }
-
+//radioplaneta
     public static double getRadioPlaneta(int id) throws SQLException {
         double radio = 0.0;
         String query = "SELECT radio FROM Planeta WHERE id = " + id;
@@ -44,7 +44,7 @@ public class Conectorbd {
 
         return radio;
     }
-
+//distancia planeta
     public static double getdistancia_solPlaneta(int id) throws SQLException {
         double distancia_sol = 0.0;
         String query = "SELECT distancia_sol FROM Planeta WHERE id = " + id;
@@ -56,8 +56,8 @@ public class Conectorbd {
         }
 
         return distancia_sol;
-    }
-
+    } 
+//periodo planeta
     public static double getperiodo_orbitaPlaneta(int id) throws SQLException {
         double periodo_orbita = 0.0;
         String query = "SELECT periodo_orbita FROM Planeta WHERE id = " + id;
@@ -70,7 +70,7 @@ public class Conectorbd {
 
         return periodo_orbita;
     }
-
+//temperatura planeta
     public static int getTemperaturaPlaneta(int id) throws SQLException {
         int temperatura = 0;
         String query = "SELECT temperatura FROM Planeta WHERE id = " + id;
@@ -83,7 +83,7 @@ public class Conectorbd {
 
         return temperatura;
     }
-
+//tipo de planeta
     public static String gettipo_planeta(int id) throws SQLException {
         String tipo_planeta = "";
         String query = "SELECT tipo_planeta FROM Planeta WHERE id = " + id;
@@ -96,7 +96,7 @@ public class Conectorbd {
 
         return tipo_planeta;
     }
-
+//cantidad de satelistes
     public static int getnumero_satelites(int id) throws SQLException {
         int numero_satelites = 0;
         String query = "SELECT numero_satelites FROM Planeta WHERE id = " + id;
@@ -109,7 +109,7 @@ public class Conectorbd {
 
         return numero_satelites;
     }
-
+// fecha de creacion
     public static String getfecha_creacion(int id) throws SQLException {
         String fecha_creacion = "";
         String query = "SELECT fecha_creacion FROM Planeta WHERE id = " + id;
@@ -123,7 +123,7 @@ public class Conectorbd {
         return fecha_creacion;
     }
 
-    /*----------------------------------------------------------------------------------------------------*/
+    /*------------------------------------------SATELITES----------------------------------------------------*/
     public static String[] getSatelitesPorPlaneta(String nombrePlaneta) throws SQLException {
         List<String> satelites = new ArrayList<>();
         String query = "SELECT Satelite.nombre "
@@ -137,13 +137,13 @@ public class Conectorbd {
             }
         }
 
-        // Verificar si la lista de satélites está vacía
+        //si satelites esta vacio
         if (satelites.isEmpty()) {
-            // Si está vacía, imprimir un mensaje y devolver un arreglo vacío
+            // controlador extra no necesario
             System.out.println("No se encontraron satélites para el planeta " + nombrePlaneta);
             return new String[0];
         } else {
-            // Si no está vacía, imprimir el primer satélite (para depuración) y devolver la lista como arreglo
+            
             System.out.println("Primer satélite encontrado: " + satelites.get(0));
             return satelites.toArray(new String[satelites.size()]);
         }

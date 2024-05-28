@@ -15,12 +15,13 @@ public class Planetas extends javax.swing.JFrame {
  public static int nplaneta;
     /**
      * Creates new form Planetas
+     * hacemos una funcion cargarplanetaincial que muestre los datos del planeta 8 nada mas cargar la base de datos
      */
     public Planetas() {
         initComponents();
         cargarPlanetaInicial();
     }
-    public void cargarPlanetaInicial(){
+    public void cargarPlanetaInicial(){//funcion de precargar de datos 
         if(nplaneta == 0){
             nplaneta = 8;
         }
@@ -327,14 +328,14 @@ public class Planetas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_planetaimgComponentAdded
 
-    private void selectorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_selectorStateChanged
+    private void selectorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_selectorStateChanged //Aqui recogeremos los valores de los datos en el programa segun el sidebar
        
         
         nplaneta = selector.getValue();
             
         
         String imagePath = "";
-        String nombrePlaneta = ""; // Variable para almacenar el nombre del planeta
+        String nombrePlaneta = ""; 
         double radioPlaneta = 0;
         double Distancia_sol = 0;
         double Periodo_orbita = 0;
